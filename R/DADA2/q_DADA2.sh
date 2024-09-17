@@ -1,7 +1,6 @@
 #!/bin/bash
 ##Usage
 ## -v script=<script file>
-## base script here: /home/home01/msjimc/scripts/R_scripts/dada2/dada2.r
 #############################################
 ###Job submission config#####################
 #############################################
