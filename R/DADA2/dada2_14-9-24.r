@@ -1,5 +1,5 @@
 ##Tested on R/4.3.1
-##Setting to be chaged for specific task
+##Settings to be chaged for specific task
 print("setting parameters: 1");print("Time:");print(Sys.time()) 
 fileBaseName <- "simon_analysis"
 print(fileBaseName)
