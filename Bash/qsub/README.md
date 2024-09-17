@@ -21,7 +21,7 @@ bash b_qacct_2.sh \<job ID>
 |-|-|
 |bash|indicates the script is a bash script|
 |b_qacct_2.sh|The name (with path) of the script file|
-|\<job ID>|The QSUB/SGE job ID for the task|
+|\<job ID>|The qsub/SGE job ID for the task|
 
 <hr />
 
