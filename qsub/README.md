@@ -9,19 +9,17 @@ For example:
 |#$ -l h_vmem=8G|Request 8 Gb of RAM per processor/slot|
 |#$ -pe smp 10|Request the task has access to 10 processors/slots|
 
-## Location of messages sent by the tasks
+#### Location of messages sent by the tasks
 
 When the jobs start they create a pair of files named after the script and the job ID number that appear in the current working directory. The files' name differ from each other by the presence of and 'e' or an 'o' after the job's ID number. 
 * The 'e' file contains any message normally written to the error out stream - typically error messages
 * The 'o' file contains message normally written to the standard oupt stream - typically status messages.
 However, what is written to the two streams is not an absolute rule so the file may contain either type of message depending on how a program was written. 
 
-## Processing mutliple task with job arrays
+#### Processing mutliple task with job arrays
 Some qsub script are designed to process multiple files in parallel as job arrays. To make a job array you need to add the -t 1-n to the command line, where n is the number of tasks that need to be processed. When using a job array, each task gets its own 'e' and 'o' file with the tasks ID added to the end of the filename. 
 
-## Comments on each qsub script file
-
-<hr />
+## Comments on each qsub script file in this folder
 
 ### [q_bwa_index.sh](q_bwa_Index.sh)
 
@@ -39,7 +37,7 @@ This file creates a BWA index that is required for the alignment of sequence dat
 
 <hr />
 
-### (qS_bwa_Index_multiple.sh)[qS_bwa_Index_multiple.sh]
+### [qS_bwa_Index_multiple.sh](qS_bwa_Index_multiple.sh)
 
 This script is very similar to q_bwa_index.sh, except it takes a folder of reference genomes (fasta files with the *.fa file extension) and creates a bwa index for each fasta file, as well as indexing the fasta files.  
 
