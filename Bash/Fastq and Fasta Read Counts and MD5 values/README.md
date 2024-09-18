@@ -1,6 +1,10 @@
 # Fasta and Fastq record counts and MD5 values
 
+## Counts
+
 Fasta and fastq are typically used to hold sequence data and may contain 1 or more sequences. Read sequences from Illumina sequencers tend to be stored in fastq files compressed with gzip, while fasta file are used to store sequence data from a wide range sources. Whatever they are, it can be important to count the number of records in each file, especially when working with sequencing data and you want to see how many reads each sample as. The scripts in this folder allow you to process a folder of files and count the reads in each file with the results stored in a text file. Each script does something slightly different from the others as outlined in the table below.
+
+## MD5
 
 When downloading large files it may be good to know whether they have been corrupted. This is normally done by comparing the MD5 values before and after the download. To create the MD5 values on Linux, you'd tend to use md5sum, some of the scripts below create a file containing these values which can then be used by other people that have downloaded the data to check for errors 
 
