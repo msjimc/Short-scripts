@@ -27,6 +27,6 @@ bash b_qacct_2.sh \<job ID>
 
 ![Figure b_qacct_2.sh](../images/b_qacct_2.jpg)
 
-Typical out put for b_qacct_2.sh reporting on a job array. (**Note** one job seems to have 200% cpu efficiency, but this is what the system reported rather than the script been wrong.)
+Typical out put for b_qacct_2.sh reporting on a job array. (**Note:** task 9 seems to have 199% cpu efficiency and used 4 x the memory of the others, this is what the system reported rather than the script been wrong!)
 
 <hr />
