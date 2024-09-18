@@ -1,4 +1,5 @@
 # qsub submission files
+## Setting the resource requests  
 
 These files are used to queue tasks on a HPC running the SGE queuing system. Each file contains a section where the number of processors, amount of RAM and run time is set. 
 For example:
@@ -8,11 +9,14 @@ For example:
 |#$ -l h_vmem=8G|Request 8 Gb of RAM per processor/slot|
 |#$ -pe smp 10|Request the task has access to 10 processors/slots|
 
+## Location of messages sent by the tasks
+
 When the jobs start they create a pair of files named after the script and the job ID number that appear in the current working directory. The files' name differ from each other by the presence of and 'e' or an 'o' after the job's ID number. 
 * The 'e' file contains any message normally written to the error out stream - typically error messages
 * The 'o' file contains message normally written to the standard oupt stream - typically status messages.
 However, what is written to the two streams is not an absolute rule so the file may contain either type of message depending on how a program was written. 
 
+## Processing mutliple task with job arrays
 Some qsub script are designed to process multiple files in parallel as job arrays. To make a job array you need to add the -t 1-n to the command line, where n is the number of tasks that need to be processed. When using a job array, each task gets its own 'e' and 'o' file with the tasks ID added to the end of the filename. 
 
 ## Comments on each qsub script file
