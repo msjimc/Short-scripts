@@ -8,6 +8,8 @@ For example:
 |#$ -l h_vmem=8G|Request 8 Gb of RAM per processor/slot|
 |#$ -pe smp 10|Request the task has access to 10 processors/slots|
 
+When the jobs start they create a pair of files named after the script and the job ID number that appear in the current working directory. The files' name differ from each other by the presence of and 'e' or an 'o' after the job's ID number. The 'e' file contains any message normally written to the error out stream - typically error messages, while the 'o' file contains message normally written to the standard oupt stream - typically status messages. 
+
 ## Comments on each qsub script file
 
 <hr />
