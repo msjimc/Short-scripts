@@ -19,7 +19,6 @@
 ################################################
 
 echo Script: $script
- conda activate genome
 
 module load boost/1.67.0
 module load R/4.3.1
