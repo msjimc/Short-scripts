@@ -61,13 +61,17 @@ for x in file:
         sequence+=x[0:len(x)-1]
 
 if (len(sequence) > 0):
-    counter = Counter(sequence)
-    count += counter['a']
+    counter = Counter(sequence)    
     count += counter['c']
     count += counter['g']
+    gc = count
+    gc += counter['G']
+    gc += counter['C']
+    count += counter['a']
     count += counter['t'] 
     count += counter['N']
     count += counter['n']
+    percent = Decimal(gc * 100) / Decimal(len(sequence))
     writeTooTxT.write(name[1:len(name)-1] + "\t" + str(count) + "\t" + str(len(sequence)) + "\t" + str(percent)[0:4] + "\n")
     if (count > 0):
         writeTooFA.write(name + sequence + "\n")
