@@ -13,6 +13,8 @@ When the jobs start they create a pair of files named after the script and the j
 * The 'o' file contains message normally written to the standard oupt stream - typically status messages.
 However, what is written to the two streams is not an absolute rule so the file may contain either type of message depending on how a program was written. 
 
+Some qsub script are designed to process multiple files in parallel as job arrays. To make a job array you need to add the -t 1-n to the command line, where n is the number of tasks that need to be processed. When using a job array, each task gets its own 'e' and 'o' file with the tasks ID added to the end of the filename. 
+
 ## Comments on each qsub script file
 
 <hr />
