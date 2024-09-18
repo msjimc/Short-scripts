@@ -1,22 +1,22 @@
 ##Tested on R/4.3.1
 ##Settings to be chaged for specific task
 print("setting parameters: 1");print("Time:");print(Sys.time()) 
-fileBaseName <- "simon_analysis"
+fileBaseName <- "This_analysis"
 print(fileBaseName)
-workingFolder <- "/nobackup/msjimc/dada/results_138_loop/"
+workingFolder <- "<path too>/results/"
 print(workingFolder)
-dataFolder <- "/nobackup/msjimc/dada/data/"
+dataFolder <- ""<path too>/data/"
 print(dataFolder)
 forwardFileNamePatern="_L001_R1_001.fastq.gz"
 print(forwardFileNamePatern)
 reverseFileNamePatern="_L001_R2_001.fastq.gz"
 print(reverseFileNamePatern)
 
-taxonomyData <- "/nobackup/msjimc/dada/silva_nr99_v138.1_train_set.fa.gz"
+taxonomyData <- "<path too>/silva_nr99_v138.1_train_set.fa.gz"
 print(taxonomyData)
-speciesData <- "/nobackup/msjimc/dada/silva_species_assignment_v138.1.fa.gz"
+speciesData <- "<path too>/silva_species_assignment_v138.1.fa.gz"
 print(speciesData)
-DECIPHERStateFile <- "/nobackup/msjimc/dada/SILVA_SSU_r138_2019.RData"
+DECIPHERStateFile <- "<path too>/SILVA_SSU_r138_2019.RData"
 print(DECIPHERStateFile)
 DoDecipher <- TRUE
 print(DoDecipher)
@@ -82,7 +82,7 @@ for (i in 1:number){
 	dev.off()
 
 	imageName <- paste(i, "_B_Reverse.png")
-	write(paste(imageName, ": Visualizing the quality profiles of the forward read.", sep="_"), fileKey, append = TRUE)
+	write(paste(imageName, ": Visualizing the quality profiles of the reverse read.", sep="_"), fileKey, append = TRUE)
 	png(imageName)
 	  print(plotQualityProfile(fnRs[i:i]))
 	dev.off()
