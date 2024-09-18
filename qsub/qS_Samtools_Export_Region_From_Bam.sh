@@ -15,10 +15,10 @@
 ################################################
 ####Job Details#################################
 ################################################
-##set path for Qualimap
-export PATH=/home/marc1_a/msjimc/qualimap_v2.2.1/:$PATH
-samtools="/home/home01/msjimc/samtools-1.3.1/samtools"
 
+
+##set path for samtools and bwa
+export PATH=<path to folder with samtools executible>:$PATH
 
 ##Check for the folder of bam files
 echo "Folder with bams:"
@@ -39,7 +39,7 @@ echo $folder/region/
 mkdir -p $folder/region
 fname=`basename $bam`
 
-$samtools view -bh $bam $region > $folder/region/$fname
-$samtools index $folder/region/$fname
+samtools view -bh $bam $region > $folder/region/$fname
+samtools index $folder/region/$fname
 
 echo done

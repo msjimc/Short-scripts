@@ -14,7 +14,7 @@
 ################################################
 
 ##set path for samtools and bwa
-export PATH=/home/home01/msjimc/marcRootApps/:$PATH
+export PATH=<path to folder with samtools and bwa executibles>:$PATH
 
 
 

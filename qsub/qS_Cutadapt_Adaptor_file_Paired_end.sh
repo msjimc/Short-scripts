@@ -22,11 +22,6 @@
 
 module load python/3.7.4
 
-#python3 -m venv cutadapt-venv
-#cutadapt-venv/bin/python3 -m pip install --upgrade pip
-#cutadapt-venv/bin/pip install cutadapt
-
-
 echo "Folder of files:"
 if [ -d "${folder}" ] ; then
     echo "Good $folder is OK";

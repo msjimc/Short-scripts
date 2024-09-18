@@ -82,9 +82,3 @@ gzip $prefix.mpileup
 
 	echo Done 
 	
-		
-##Make sure you have the most recent version of bcftools (v1.9). 
-###$ bcftools mpileup -Ou -f ref.fa aln.bam | \
-###bcftools call -Ou -mv | \
-###bcftools norm -f ref.fa | \
-###bcftools consensus -f ref.fa -o consensus.fa	

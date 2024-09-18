@@ -17,8 +17,7 @@
 ################################################
 
 ##set path for samtools and bwa
-samtools="/home/home01/msjimc/samtools-1.3.1/samtools"
-bwa="/home/home01/msjimc/bwa-0.7.12/bwa"
+export PATH=<path to folder with samtools and bwa executibles>:$PATH
 
 echo bwa index $bwaIndex
 
@@ -73,18 +72,18 @@ echo "Look for Read2 file:"
 if [ -f "${read2}" ]; then
     echo "Good ${Read2} is a present"; 
 	echo Start BWA with read pair
-	$bwa mem -t 4 $bwaIndex $read1 $read2 > $prefix.sam
+	bwa mem -t 4 $bwaIndex $read1 $read2 > $prefix.sam
 else
     echo "${Read2} is not present";
     echo Start BWA with single read 
-	$bwa mem -t 4 $bwaIndex $read1 > $prefix.sam
+	bwa mem -t 4 $bwaIndex $read1 > $prefix.sam
 fi
 
 
 	echo Starting sorting
-$samtools view -bS $prefix.sam | $samtools sort -o $prefix.bam
+samtools view -bS $prefix.sam | $samtools sort -o $prefix.bam
 	echo making index
-$samtools index $prefix.bam
+samtools index $prefix.bam
 	echo Remove sam file
 rm $prefix.sam
 

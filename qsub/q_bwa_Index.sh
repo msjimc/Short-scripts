@@ -14,7 +14,7 @@
 ################################################
 
 ##set path for samtools and bwa
-export PATH=/home/home01/msjimc/marcRootApps/:$PATH
+export PATH=<path to folder with samtools and bwa executibles>:$PATH
 
 ##Check for the file of fasta file
 echo "Folder of files:"
@@ -33,15 +33,5 @@ bwa index -a bwtsw $fasta
 
 echo Indexing reference file with Samtools
 samtools faidx $fasta
-
-echo Reporting
-jobID=$(qstat | egrep 'get_job_ID')
-job_ID=${jobID%" 0."*}
-echo $job_ID
-echo $(qstat -j $job_ID | egrep '^job-array tasks:')
-echo $(qstat -j $job_ID | egrep '^hard')
-echo $(qstat -j $job_ID | egrep '^submission')
-echo $(qstat -j $job_ID | egrep '^script_file')
-echo $(qstat -j $job_ID | egrep '^usage')
 
 echo done
