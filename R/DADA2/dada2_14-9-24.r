@@ -78,7 +78,7 @@ for (i in 1:number){
 	imageName <- paste(i, "_A_forward.png")
 	write(paste(imageName, ": Visualizing the quality profiles of the forward read.", sep="_"), fileKey, append = TRUE)
 	png(imageName)
-	  print(plotQualityProfile(fnRs[i:i]))
+	  print(plotQualityProfile(fnFs[i:i]))
 	dev.off()
 
 	imageName <- paste(i, "_B_Reverse.png")
