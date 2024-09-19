@@ -11,13 +11,24 @@ For example:
 
 #### Location of messages sent by the tasks
 
-When the jobs start they create a pair of files named after the script and the job ID number that appear in the current working directory. The files' name differ from each other by the presence of and 'e' or an 'o' after the job's ID number. 
+When the jobs start they create a pair of files, named after the script and the job ID number that appear in the current working directory. The files' name differ from each other by the presence of and 'e' or an 'o' after the job's ID number. 
 * The 'e' file contains any message normally written to the error out stream - typically error messages
 * The 'o' file contains message normally written to the standard oupt stream - typically status messages.
-However, what is written to the two streams is not an absolute rule so the file may contain either type of message depending on how a program was written. 
+
+For example, the submission of the q_bwa_Index.sh script may create file named:
+
+q_bwa_Index.sh.e6909642  
+q_bwa_Index.sh.o6909642
+
+However, what is written to the two streams is not an absolute rule so the file may contain either type of message depending on how a program was written. F
 
 #### Processing mutliple task with job arrays
-Some qsub script are designed to process multiple files in parallel as job arrays. To make a job array you need to add the -t 1-n to the command line, where n is the number of tasks that need to be processed. When using a job array, each task gets its own 'e' and 'o' file with the tasks ID added to the end of the filename. 
+Some qsub scripts are designed to process multiple files in parallel as job arrays. To make a job array you need to add the -t 1-n to the command line, where n is the number of tasks that need to be processed. When using a job array, each task gets its own 'e' and 'o' file with the tasks ID added to the end of the filename. For example, the submission of the qS_bwa_Index_multiple.sh script to process two fasta files, may create two pairs of files named:
+
+qS_bwa_Index_multiple.sh.e6909643.1  
+qS_bwa_Index_multiple.sh.o6909643.1  
+qS_bwa_Index_multiple.sh.e6909643.2  
+qS_bwa_Index_multiple.sh.o6909643.2  
 
 ## Comments on each qsub script file in this folder
 
