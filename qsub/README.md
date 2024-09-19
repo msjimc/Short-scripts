@@ -43,7 +43,6 @@ This script is very similar to q_bwa_index.sh, except it takes a folder of refer
 
 ***Usage***
 
-> qsub -t 1-n -v folder=\<folder of genome reference files> q_bwa_index.sh
 > qsub -t 1-n -v folder=\<folder of genome reference files> qS_bwa_Index_multiple.sh
 
  __Notes:__ The the command requires the folder's and scripts paths to be included in the command. Since this script process a number of fasta files, it creates a job array with each genome processed by its own task. To make a job array you need to add the **-t 1-n** to the command line, where n is the number of fasta files to be processed.
