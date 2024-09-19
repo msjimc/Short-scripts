@@ -44,6 +44,7 @@ This script is very similar to q_bwa_index.sh, except it takes a folder of refer
 ***Usage***
 
 > qsub -t 1-n -v folder=\<folder of genome reference files> q_bwa_index.sh
+> qsub -t 1-n -v folder=\<folder of genome reference files> qS_bwa_Index_multiple.sh
 
  __Notes:__ The the command requires the folder's and scripts paths to be included in the command. Since this script process a number of fasta files, it creates a job array with each genome processed by its own task. To make a job array you need to add the **-t 1-n** to the command line, where n is the number of fasta files to be processed.
 
@@ -127,5 +128,23 @@ The exported regions are formatted as BAM files which are also index. The new fi
  __Requirements:__ samtools need to be present on the server
 
  __Modifications:__ line 21 needs modifying so that the text in angled brackets is replaced by the name of the folder (with its path) that holds the samtools program. 
+
+<hr />
+
+### [qS_FastQC_folder.sh](qS_FastQC_folder.sh)
+
+This script takes a folder of Illumina sequencing data Fastq files and scans each one with FASTQC, which creates a report on each data file highlighting any issues with the data. The reports are exported as HTML text files with a zipped folder containing any images and formatting files. This script creates a job array, with each job analysing one fastq.gz file.  
+
+***Usage***
+
+> qsub -t 1-n -v folder=\<folder of genome reference files> qS_FastQC_folder.sh
+
+ __Notes:__ 
+ * The the command requires the folder's and scripts paths to be included in the command.   
+ * Since this script process a number of fasta files, it creates a job array with each genome processed by its own task. To make a job array you need to add the **-t 1-n** to the command line, where n is the number of fasta files to be processed.
+
+ __Requirements:__ samtools and bwa need to be present on the server
+
+ __Modifications:__ line 21 needs modifying so that the text in angled brackets is replaced by the name of the folder (with its path) that holds the fastQC programs. The script's requirements are set for the analysis of a fastq.gz file with less than 100 million inserts.
 
 <hr />

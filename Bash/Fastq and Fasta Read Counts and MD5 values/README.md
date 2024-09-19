@@ -3,6 +3,7 @@
 ## Counts
 
 Fasta and fastq are typically used to hold sequence data and may contain 1 or more sequences. Read sequences from Illumina sequencers tend to be stored in fastq files compressed with gzip, while fasta file are used to store sequence data from a wide range sources. Whatever they are, it can be important to count the number of records in each file, especially when working with sequencing data and you want to see how many reads each sample as. The scripts in this folder allow you to process a folder of files and count the reads in each file with the results stored in a text file. Each script does something slightly different from the others as outlined in the table below.
+Fasta and fastq are typically used to hold sequence data and may contain 1 or more sequences. Read sequences from Illumina sequencers tend to be stored in fastq files compressed with gzip, while fasta files are used to store sequence data from a wide range sources. Whatever they are, it can be important to count the number of records in each file, especially when working with sequencing data and you want to see how many reads each sample has. The scripts in this folder allow you to process a folder of files and count the reads in each file with the results stored in a text file. Each script does something slightly different from the others as outlined in the table below.
 
 ## MD5
 

@@ -33,7 +33,6 @@ else:
     print("Uncompressed file")
     file = open(fileName, "r")
 
-
 for x in file:
     if (x.startswith('>') == True):
         if (len(sequence) > 0):
