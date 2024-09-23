@@ -18,11 +18,13 @@
 ####Job Details#################################
 ################################################
 
+FastQC=<path to fastqc>/fastqc
+
 echo Data folder: $folder
 fastqFile=$(ls $folder/*fastq.gz | sed -n -e "$SGE_TASK_ID p")
 
 mkdir -p $folder/Fastq_Report/temp;
-##Will re-run FastQC software on quality-trimmed data using the same parameters as before, except using as input all fastq files in /trimmed directory:
-/home/home01/msjimc/fastqc/fastqc -o $folder/Fastq_Report/ --threads 1 --dir $folder/Fastq_Report/temp/ $fastqFile
+
+$FastQC -o $folder/Fastq_Report/ --threads 1 --dir $folder/Fastq_Report/temp/ $fastqFile
 
 echo done 
